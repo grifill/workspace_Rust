@@ -3,9 +3,9 @@ ____
 
 ## Refreshing and Upgrading Your Ubuntu System Before Rust Installation
 
-'''
-sudo apt-get update && sudo apt-get upgrade
-'''
+```bash
+    sudo apt-get update && sudo apt-get upgrade
+```
 
 ## Install Initial Packages Required for Rust Installation
 
