@@ -43,27 +43,27 @@ ____
 ## Create the Rust Source File
 
 ```bash
-    cd rust-projects && nano helloworld.rs
+    cd rust-projects && nano hello.rs
 ```
 
 ## Writing the “Hello, World!” Program with Rust
 
 ```rust
     fn main() {
-    println!("Hello World, this is a test provided by LinuxCapable.com");
+    println!("Hello World, this is a test provided by grifill");
     }
 ```
 
 ## Compile Test Rust Program
 
 ```bash
-    rustc helloworld.rs
+    rustc hello.rs
 ```
 
 ## Running the Rust Program
 
 ```bash
-    ./helloworld
+    ./hello
 ```
 
 # Managing Rust On Your System
