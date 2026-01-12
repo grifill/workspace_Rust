@@ -9,12 +9,12 @@ fn main() {
     .set_label_area_size(LabelAreaPosition::Left, 40)
     .set_label_area_size(LabelAreaPosition::Bottom, 40)
     .caption("Line Plot Demo", ("sans-serif", 40))
-    .build_cartesian_2d(-10..10, 0..100)
+    .build_cartesian_2d(-25..25, 0..250)
     .unwrap();
 
   ctx.configure_mesh().draw().unwrap();
 
   ctx.draw_series(
-    LineSeries::new((-10..=10).map(|x| (x, x* x)), &GREEN)
+    LineSeries::new((-10..=10).map(|x| (x, x* x)), &BLUE)
   ).unwrap();
 }
