@@ -1,6 +1,8 @@
 [package]
 name = "cubesnum"
 version = "0.1.0"
+authors = ["Gregory Filatov"]
 edition = "2024"
 
 [dependencies]
+miniquad = { version = "0.4.8", features = ["log-impl"] }
