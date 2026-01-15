@@ -15,6 +15,6 @@ fn main() {
   ctx.configure_mesh().draw().unwrap();
 
   ctx.draw_series(
-    LineSeries::new((-10..=10).map(|x| (x, x* x)), &BLUE)
+    LineSeries::new((-50..=50).map(|x| (x, x* 2*x)), &BLUE)
   ).unwrap();
 }
