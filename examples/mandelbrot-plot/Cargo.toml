@@ -2,5 +2,7 @@
 name = "mandelbrot-plot"
 version = "0.1.0"
 edition = "2024"
+authors = ["Gregory Filatov"]
 
 [dependencies]
+num = "0.1.27"
