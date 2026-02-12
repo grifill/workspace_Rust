@@ -6,4 +6,4 @@ authors = ["Gregory Filatov"]
 
 [dependencies]
 num = "0.4.3"
-image = "0.25.9"
+image = "0.13.0"

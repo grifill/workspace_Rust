@@ -3,6 +3,11 @@
 extern crate num;
 use num::Complex;
 
+// Image
+extern crate image; 
+use image::ColorType; 
+use image::png::PNGEncoder; 
+use std::fs::File;
 // Str
 use std::str::FromStr;
 
@@ -80,7 +85,7 @@ fn pixel_to_point(bounds: (usize, usize),
                     
     let (width, height) = (lower_right.re - upper_left.re, upper_left.im - lower_right.im);
     Complex {
-        /// pixel.1 increases as you move down, while the imaginary part increases as you move up
+        // pixel.1 increases as you move down, while the imaginary part increases as you move up
         re: upper_left.re + pixel.0 as f64 * width / bounds.0 as f64,
         im: upper_left.im - pixel.1 as f64 * height / bounds.1 as f64 
     }
@@ -110,4 +115,16 @@ fn render(pixels: &mut [u8],
             pixels[row * bounds.0 + column] = match escape_time(point, 255) { None => 0, Some(count) => 255 - count as u8}; 
         }
     }
+}
+
+/// Writes the buffer 'pixels', whose dimensions are 
+/// specified by the 'bounds' argument, to the file named 'filename'
+fn write_image(filename: &str, pixels: &[u8], bounds: (usize, usize))-> Result<(), std::io::Error> {
+
+    let output = File::create(filename)?;
+    let encoder = PNGEncoder::new(output);
+    //let color = [0x85, 0xC7, 0xAB];
+    encoder.encode(&pixels, bounds.0 as u32, bounds.1 as u32, ColorType::Gray(8))?;
+    
+    Ok(())
 }
