@@ -11,8 +11,25 @@ use std::fs::File;
 // Str
 use std::str::FromStr;
 
+use std::io::Write;
+
 fn main() {
-    println!("Hello, Mandelbrot!");
+    let args: Vec<String> = std::env::args().collect();
+    
+    if args.len() != 5 { 
+        writeln!(std::io::stderr(), "FILE PIXELS UPPERLEFT LOWERRIGHT")
+        .unwrap();
+        writeln!(std::io::stderr(), "{} mandel.png 1000x750 -1.20,0.35 -1,0.20", args[0])
+        .unwrap(); 
+        std::process::exit(1); 
+    }
+    
+    let bounds = parse_pair(&args[2], 'x').expect("Error image size"); 
+    let upper_left = parse_complex(&args[3]).expect("Error left corner point"); 
+    let lower_right = parse_complex(&args[4]).expect("Right left corner point"); 
+    let mut pixels = vec![0; bounds.0 * bounds.1];
+    render(&mut pixels, bounds, upper_left, lower_right);
+    write_image(&args[1], &pixels, bounds).expect("Error writing PNG-file");
 }
 
 /// Try to determine whether 'c' belongs to the Mandelbrot set, limiting the number of iterations 'limit'
