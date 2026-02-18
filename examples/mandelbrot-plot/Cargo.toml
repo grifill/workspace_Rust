@@ -7,3 +7,4 @@ authors = ["Gregory Filatov"]
 [dependencies]
 num = "0.4.3"
 image = "0.20.0"
+crossbeam = "0.2.8"
