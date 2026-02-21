@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Example Mandelbrot-plot Build
       run: cargo build --verbose
-      working-directory: mandelbrot-plot
+      working-directory: examples/mandelbrot-plot
     - name: Run tests
       run: cargo test --verbose
-      working-directory: mandelbrot-plot
+      working-directory: examples/mandelbrot-plot
