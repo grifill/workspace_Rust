@@ -16,12 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Home
-      run: cd ../
-    - name: pwd
-      run: pwd
     - name: Example_mandelbrot_plot
-      run: cd ./examples/mandelbrot-plot
+      run: cd /home/runner/work/workspace_Rust/workspace_Rust/examples/mandelbrot-plot
     - name: Build
       run: cargo build --verbose
     - name: Run tests
