@@ -16,10 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Home 
+    - name: Home
       run: cd ../
-    - name: Example_hello 
-      run: cd examples/hello
+    - name: Example_mandelbrot_plot
+      run: cd examples/mandelbrot-plot
     - name: Build
       run: cargo build --verbose
     - name: Run tests
