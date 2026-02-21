@@ -16,9 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Example_mandelbrot_plot
-      run: cd /home/runner/work/workspace_Rust/workspace_Rust/examples/mandelbrot-plot
-    - name: Build
+    - name: Example Mandelbrot-plot Build
       run: cargo build --verbose
+      working-directory: mandelbrot-plot
     - name: Run tests
       run: cargo test --verbose
+      working-directory: mandelbrot-plot
