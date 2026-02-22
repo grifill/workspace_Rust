@@ -16,9 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Example Mandelbrot-plot Build
+    - name: Example hello-cargo Build
+      run: cargo build --verbose
+      working-directory: examples/hello-cargo
+    - name: Example iron-gcd Build
+      run: cargo build --verbose
+      working-directory: examples/iron-gcd
+    - name: Example mandelbrot-plot Build
       run: cargo build --verbose
       working-directory: examples/mandelbrot-plot
-    - name: Run tests
+    - name: Example mandelbrot-plot Run tests
       run: cargo test --verbose
       working-directory: examples/mandelbrot-plot
