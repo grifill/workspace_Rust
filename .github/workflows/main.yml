@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Example files-std Build
+      run: cargo build --verbose
+      working-directory: examples/files-std
     - name: Example hello-cargo Build
       run: cargo build --verbose
       working-directory: examples/hello-cargo
