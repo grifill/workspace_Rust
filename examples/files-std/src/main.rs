@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::Write;
+use std::io::Read;
 
 fn main() -> Result<(), std::io::Error> {
     let string_name_file = "exampleFile.txt";
@@ -11,21 +12,14 @@ fn main() -> Result<(), std::io::Error> {
     // Write string
     file.write_all(string_data_file.as_bytes())?;
 
+    // Read data from file
+    let mut content = String::new();
+    let mut input_file = File::open(string_name_file)?;
+    input_file.read_to_string(&mut content)?;
+
     // Print message
     println!("File {} has been written succesfully", string_name_file);
+    println!("File content: {}", content);
+
     Ok(())
 }
-
-/*fn main() -> Result<(), std::io::Error> {
-
-    let file_path = "example.txt";  // файл для записи
-    let text = String::from("Hello METANIT.COM!");    // текст для записи
-    let mut output_file = File::create(file_path)?; // создаем файл
-    output_file.write_all(text.as_bytes())?;     // записываем в файл текст
-
-    let mut content = String::new();    // строка для считывания файла
-    let mut input_file = File::open(file_path)?;   // открываем файл
-    input_file.read_to_string(&mut content)?;      // считываем содержимое файла в строку
-    println!("File content: {}", content);      // выводим считанный текст на консоль
-    Ok(())
-}*/
