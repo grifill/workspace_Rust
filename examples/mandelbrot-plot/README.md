@@ -1,4 +1,4 @@
-# Mandelbrot plot exammple from book
+# Mandelbrot plot example from book
 ____
 
 ## Build
