@@ -4,14 +4,7 @@ ____
 ## Build
 
 ```bash
-    cd /examples/files-std
+    cd /examples/arrays-sort
     cargo build
-```
-
-## Run
-
-```bash
-    cd /examples/files-std/target/debug/
-    ./files-std
 ```
 ____

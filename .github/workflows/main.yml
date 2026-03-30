@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Example arrays-sort Build
+      run: cargo build --verbose
+      working-directory: examples/arrays-sort
     - name: Example files-std Build
       run: cargo build --verbose
       working-directory: examples/files-std
