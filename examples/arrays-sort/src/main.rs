@@ -11,18 +11,31 @@ fn main() {
 
 
 fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
-    let (mut left, mut right) = (0, arr.len()); // Set search interval
+
+    // Set search interval
+    let (mut left, mut right) = (0, arr.len());
 
     while left < right {
-        let mid = left + (right - left) / 2; // Find median
+        
+        // Find median
+        let mid = left + (right - left) / 2;
 
+        // If found return index
         if arr[mid] == target {
-            return Some(mid); // If found return index
-        } else if arr[mid] < target {
-            left = mid + 1; // Search right side
-        } else {
-            right = mid; // Search left side
+            return Some(mid);
+        }
+
+        // Search right side
+        else if arr[mid] < target {
+            left = mid + 1;
+        } 
+        
+        // Search left side
+        else {
+            right = mid;
         }
     }
-    None // If not found return None
+    
+    // If not found return None
+    None
 }
