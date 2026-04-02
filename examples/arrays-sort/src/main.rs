@@ -39,3 +39,19 @@ fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
     // If not found return None
     None
 }
+
+fn binary_search_recursive(arr: &[i32], target: i32, left: usize, right: usize) -> Option<usize> {
+    if left >= right {
+        return None;
+    }
+
+    let mid = left + (right - left) / 2;
+
+    if arr[mid] == target {
+        return Some(mid);
+    } else if arr[mid] < target {
+        return binary_search_recursive(arr, target, mid + 1, right);
+    } else {
+        return binary_search_recursive(arr, target, left, mid);
+    }
+}
