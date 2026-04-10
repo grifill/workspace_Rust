@@ -1,0 +1,62 @@
+pub fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
+    // Set search interval
+    let (mut left, mut right) = (0, arr.len());
+
+    while left < right {
+        // Find median
+        let mid = left + (right - left) / 2;
+
+        // If found return index
+        if arr[mid] == target {
+            return Some(mid);
+        }
+        // Search right side
+        else if arr[mid] < target {
+            left = mid + 1;
+        }
+        // Search left side
+        else {
+            right = mid;
+        }
+    }
+
+    // If not found return None
+    None
+}
+
+/* 
+pub fn binary_search_recursive(arr: &[i32], target: i32, left: usize, right: usize) -> Option<usize> {
+    if left >= right {
+        return None;
+    }
+
+    let mid = left + (right - left) / 2;
+
+    if arr[mid] == target {
+        return Some(mid);
+    } else if arr[mid] < target {
+        return binary_search_recursive(arr, target, mid + 1, right);
+    } else {
+        return binary_search_recursive(arr, target, left, mid);
+    }
+}
+
+pub fn binary_search_first(arr: &[i32], target: i32) -> Option<usize> {
+    let (mut left, mut right) = (0, arr.len());
+    let mut result = None;
+
+    while left < right {
+        let mid = left + (right - left) / 2;
+
+        if arr[mid] >= target {
+            if arr[mid] == target {
+                result = Some(mid);
+            }
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+    result
+}
+*/
