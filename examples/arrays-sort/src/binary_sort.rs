@@ -24,7 +24,7 @@ pub fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
     None
 }
 
-/* 
+ 
 pub fn binary_search_recursive(arr: &[i32], target: i32, left: usize, right: usize) -> Option<usize> {
     if left >= right {
         return None;
@@ -59,4 +59,3 @@ pub fn binary_search_first(arr: &[i32], target: i32) -> Option<usize> {
     }
     result
 }
-*/
