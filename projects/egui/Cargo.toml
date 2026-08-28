@@ -1,0 +1,13 @@
+[package]
+name = "egui"
+version = "0.1.0"
+edition = "2024"
+authors = ["grifill"]
+license = "MIT"
+description = "A training example application egui (eframe)"
+repository = "https://github.com/grifill/workspace_Rust"
+
+[dependencies]
+egui = "0.36.0"
+eframe = { version = "0.36.0", features = ["persistence"] }
+log = "0.4.27"
