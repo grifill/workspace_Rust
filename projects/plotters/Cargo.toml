@@ -4,11 +4,8 @@ version = "0.1.0"
 edition = "2024"
 authors = ["grifill"]
 license = "MIT"
-description = "A training example application to paint plots"
+description = "A training example application painting plots"
 repository = "https://github.com/grifill/workspace_Rust"
 
 [dependencies]
 plotters = "0.3.3"
-#egui_plot = "0.35.0"
-#eframe = { version = "0.34.1", default-features = false, features = ["default_fonts", "glow", "persistence"] }
-eframe = { version = "0.21.3", default-features = false, features = ["default_fonts", "glow", "persistence"] }
